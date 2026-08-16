@@ -65,18 +65,13 @@ export const siteContent = {
       title: "We're Here When You're Hungry",
       location: {
         label: "Our Location",
-        lines: ["123 Burger Street,", "Foodtown, FT 12345"],
         linkLabel: "Get Directions",
-        linkHref: "#", // replace with real Google Maps link
       },
       hours: {
         label: "Opening Hours",
-        lines: ["Monday - Sunday", "11:00AM - 11:00PM"],
       },
       contact: {
         label: "Contact Us",
-        phone: "+1 (111) 123-4567",
-        email: "hello@bunandfire.com",
         linkLabel: "Send Us a Message",
         linkHref: "#", // e.g. mailto:hello@bunandfire.com or a contact anchor
       },
