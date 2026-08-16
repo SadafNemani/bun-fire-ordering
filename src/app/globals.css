@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #ff5a1f;
+  --color-accent: #ffc857;
+  --color-charcoal: #1f1f1f;
+  --color-background: #fff8f0;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f2eee8;
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: #6b6b6b;
+  --color-success: #22c55e;
+
+  /* Radius */
+  --radius-card: 20px;
+  --radius-button: 9999px;
+  --radius-image: 20px;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px rgba(31, 31, 31, 0.08);
+  --shadow-button: 0 10px 30px rgba(31, 31, 31, 0.08);
+
+  /* Fonts */
+  --font-heading: var(--font-bricolage);
+  --font-body: var(--font-inter);
+
+  /* Font Size */
+  --text-hero-title: clamp(2.25rem, 1.3rem + 4vw, 4rem);
+  --text-section-heading: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  --text-section-label: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
+  --text-item-title: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-price: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
+  --text-body: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-body-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+
+  --navbar-clearance: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  font-family: var(--font-body);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
