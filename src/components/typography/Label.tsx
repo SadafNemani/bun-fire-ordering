@@ -8,9 +8,7 @@ interface LabelProps extends HTMLAttributes<HTMLSpanElement> {
 export default function Label({ children, className, ...props }: LabelProps) {
   return (
     <span
-      className={
-        (cn("font-body text-accent text-section-label font-extrabold uppercase"), className)
-      }
+      className={cn("font-body text-accent text-section-label font-extrabold uppercase", className)}
       {...props}
     >
       {children}
