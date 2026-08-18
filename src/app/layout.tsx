@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bricolageGrotesque, inter } from "@/lib/fonts";
+import { bricolageGrotesque, inter, kaushanScript } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolageGrotesque.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${bricolageGrotesque.variable} ${inter.variable} ${kaushanScript.variable}`}
+    >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

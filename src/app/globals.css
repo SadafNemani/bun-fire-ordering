@@ -24,6 +24,7 @@
   /* Fonts */
   --font-heading: var(--font-bricolage);
   --font-body: var(--font-inter);
+  --font-script: var(--font-script);
 
   /* Font Size */
   --text-hero-title: clamp(2.5rem, 1.5rem + 4.5vw, 6.875rem);

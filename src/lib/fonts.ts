@@ -1,4 +1,4 @@
-import { Bricolage_Grotesque, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Kaushan_Script } from "next/font/google";
 
 export const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -11,5 +11,12 @@ export const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+export const kaushanScript = Kaushan_Script({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-script",
   display: "swap",
 });
