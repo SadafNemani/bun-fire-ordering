@@ -1,9 +1,11 @@
-import AddToCartButton from "@/components/ui/AddToCartButton";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
     <main>
-      <AddToCartButton />
+      <Button variant="primary">ORDER NOW</Button>
+
+      <Button variant="secondary">VIEW MENU</Button>
     </main>
   );
 }
