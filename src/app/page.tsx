@@ -1,9 +1,12 @@
-import StarRating from "@/components/ui/StarRating";
+import StepIndicator from "@/components/ui/StepIndicator";
 
 export default function Home() {
   return (
     <main>
-      <StarRating>500+ Happy Customers</StarRating>
+      <StepIndicator
+        steps={[{ label: "Cart" }, { label: "Checkout" }, { label: "Confirmation" }]}
+        currentStep={1}
+      />
     </main>
   );
 }
