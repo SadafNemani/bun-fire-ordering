@@ -1,3 +1,9 @@
+import AddToCartButton from "@/components/ui/AddToCartButton";
+
 export default function Home() {
-  return <main>BUN & FIRE</main>;
+  return (
+    <main>
+      <AddToCartButton />
+    </main>
+  );
 }
