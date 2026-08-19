@@ -1,3 +1,4 @@
+// lib/utils.ts
 import { clsx, type ClassValue } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
@@ -6,19 +7,29 @@ const twMerge = extendTailwindMerge({
     classGroups: {
       "text-color": [
         {
-          text: ["primary", "secondary", "accent"],
+          text: [
+            "primary",
+            "accent",
+            "charcoal",
+            "success",
+            "surface",
+            "text-primary",
+            "text-secondary",
+          ],
         },
       ],
 
       "font-size": [
         {
           text: [
-            "section-heading",
+            "hero-title",
+            "heading-lg",
+            "heading-md",
             "section-label",
-            "section-description",
+            "item-title",
+            "price",
             "body",
-            "statistic",
-            "project-title",
+            "body-sm",
           ],
         },
       ],
