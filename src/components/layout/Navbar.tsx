@@ -6,7 +6,6 @@ import Container from "./Container";
 import Button from "../ui/Button";
 import CartButton from "../ui/CartButton";
 import { useCart } from "@/hooks/useCart";
-import { brand } from "@/constants/brand";
 import Image from "next/image";
 
 const navLinks = [
