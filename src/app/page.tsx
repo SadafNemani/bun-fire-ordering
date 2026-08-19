@@ -1,11 +1,9 @@
-import Button from "@/components/ui/Button";
+import CartButton from "@/components/ui/CartButton";
 
 export default function Home() {
   return (
     <main>
-      <Button variant="primary">ORDER NOW</Button>
-
-      <Button variant="secondary">VIEW MENU</Button>
+      <CartButton itemCount={3} total={45.7} />
     </main>
   );
 }
