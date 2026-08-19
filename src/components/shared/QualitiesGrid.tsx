@@ -32,7 +32,7 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
               </span>
               <div className="flex flex-col gap-1">
                 <span className="text-[24px] font-extrabold text-white">{item.label}</span>
-                <span className="text-surface-secondary text-[18px] font-medium">
+                <span className="text-surface-secondary text-button font-medium">
                   {item.description}
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
                 <span className="font-heading text-primary text-[30px] leading-none font-extrabold">
                   {item.normalLabel}
                 </span>
-                <span className="font-body text-text-secondary mt-2 text-[18px]">
+                <span className="font-body text-text-secondary text-button mt-2">
                   {item.description}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
               <Icon className="text-primary h-5 w-5" />
             </span>
             <div className="flex flex-col">
-              <span className="font-body text-charcoal text-[18px] font-medium">{item.label}</span>
+              <span className="font-body text-charcoal text-button font-medium">{item.label}</span>
               <span className="font-body text-text-secondary text-[14px]">{item.description}</span>
             </div>
           </div>

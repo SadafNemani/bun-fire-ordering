@@ -28,7 +28,7 @@ export default function CartButton({ itemCount, total, onClick, className }: Car
         )}
       </span>
       <span className="flex flex-col items-start">
-        <span className="text-text-secondary text-[18px]">View Cart</span>
+        <span className="text-text-secondary text-button">View Cart</span>
         <PriceText value={total} />
       </span>
     </button>
