@@ -1,12 +1,11 @@
-import StepIndicator from "@/components/ui/StepIndicator";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
   return (
     <main>
-      <StepIndicator
-        steps={[{ label: "Cart" }, { label: "Checkout" }, { label: "Confirmation" }]}
-        currentStep={1}
-      />
+      <Card background="cream">
+        <p>hello</p>
+      </Card>
     </main>
   );
 }
