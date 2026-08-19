@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { bricolageGrotesque, inter, kaushanScript } from "@/lib/fonts";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${bricolageGrotesque.variable} ${inter.variable} ${kaushanScript.variable}`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   );
 }
