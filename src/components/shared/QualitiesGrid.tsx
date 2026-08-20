@@ -82,7 +82,7 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
             </span>
             <div className="flex flex-col">
               <span className="font-body text-charcoal text-button font-medium">{item.label}</span>
-              <span className="font-body text-text-secondary text-[14px]">{item.description}</span>
+              <span className="font-body text-text-secondary text-body-sm">{item.description}</span>
             </div>
           </div>
         );
