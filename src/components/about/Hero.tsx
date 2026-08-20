@@ -1,1 +1,52 @@
-// left copy + right image, overlaying shared/QualitiesGrid variant="overlay"
+import Image from "next/image";
+import Label from "../typography/Label";
+import Heading from "../typography/Heading";
+import Text from "../typography/Text";
+import ScriptText from "../typography/ScriptText";
+import QualitiesGrid from "../shared/QualitiesGrid";
+import { siteContent } from "@/data/site-content";
+import { Zap, Clock, ShoppingBag } from "lucide-react";
+import UnderlineSwash from "../ui/UnderlineSwash";
+
+const qualities = [
+  { icon: Zap, ...siteContent.about.qualities[0] },
+  { icon: Clock, ...siteContent.about.qualities[1] },
+  { icon: ShoppingBag, ...siteContent.about.qualities[2] },
+];
+
+export default function AboutHero() {
+  const { hero } = siteContent.about;
+
+  return (
+    <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+      <div className="flex flex-col gap-5">
+        <Label>{hero.label}</Label>
+        <Heading as="h1" size="lg">
+          {hero.title.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
+        </Heading>
+        <Text>{hero.description}</Text>
+        <div className="flex flex-col items-start gap-1">
+          <ScriptText>{hero.scriptText}</ScriptText>
+          <UnderlineSwash />
+        </div>
+      </div>
+
+      <div className="rounded-card relative h-80 w-full overflow-hidden md:h-105">
+        <Image
+          src="/images/about-hero.jpg"
+          alt="Bun & Fire kitchen"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="relative z-10 -mt-6 w-full md:absolute md:bottom-0 md:left-0 md:mt-0 md:w-auto md:translate-y-1/2">
+        <QualitiesGrid variant="about" items={qualities} />
+      </div>
+    </div>
+  );
+}
