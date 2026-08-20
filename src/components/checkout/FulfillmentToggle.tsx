@@ -11,15 +11,15 @@ interface FulfillmentOption {
   disabled?: boolean;
 }
 
-interface FullfillmentToggleProps {
-  options: FulfillmentOption[];
+interface FulfillmentToggleProps {
+  options: readonly FulfillmentOption[];
   value: FulfillmentType;
   onChange: (value: FulfillmentType) => void;
 }
 
 const VALUES: FulfillmentType[] = ["pickup", "delivery"];
 
-export default function FullfillmentToggle({ options, value, onChange }: FullfillmentToggleProps) {
+export default function FullfillmentToggle({ options, value, onChange }: FulfillmentToggleProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {options.map((option, index) => {
