@@ -45,22 +45,26 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
 
   if (variant === "about") {
     return (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row">
         {(items as QualityHighlighted[]).map((item) => {
           const Icon = item.icon;
           return (
-            <Card key={item.highlightedLabel} className="bg-surface flex-row items-center gap-5">
-              <span className="rounded-button bg-primary flex h-16 w-16 shrink-0 items-center justify-center">
-                <Icon className="text-surface h-7 w-7" />
+            <Card
+              key={item.highlightedLabel}
+              background="white"
+              className="flex-row items-center gap-4 sm:flex-1"
+            >
+              <span className="rounded-pill bg-primary flex h-14 w-14 shrink-0 items-center justify-center">
+                <Icon className="text-surface h-6 w-6" />
               </span>
               <div className="flex flex-col">
-                <span className="font-heading text-charcoal text-[40px] leading-none font-extrabold">
+                <span className="font-heading text-charcoal text-[32px] leading-none font-extrabold">
                   {item.highlightedLabel}
                 </span>
-                <span className="font-heading text-primary text-[30px] leading-none font-extrabold">
+                <span className="font-heading text-primary text-[24px] leading-none font-extrabold">
                   {item.normalLabel}
                 </span>
-                <span className="font-body text-text-secondary text-button mt-2">
+                <span className="font-body text-text-secondary mt-1 text-[15px]">
                   {item.description}
                 </span>
               </div>
