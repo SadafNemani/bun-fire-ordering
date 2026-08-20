@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bricolageGrotesque, inter, kaushanScript } from "@/lib/fonts";
+import { bricolageGrotesque, plusJakartaSans, kaushanScript } from "@/lib/fonts";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${inter.variable} ${kaushanScript.variable}`}
+      className={`${bricolageGrotesque.variable} ${plusJakartaSans.variable} ${kaushanScript.variable}`}
     >
       <body>
         <CartProvider>
