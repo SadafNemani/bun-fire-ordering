@@ -16,6 +16,8 @@ export const menuItems: MenuItem[] = [
     name: "Classic Smash",
     description: "Double beef patty, cheddar, signature sauce",
     price: 12.99,
+    popular: true,
+    dateAdded: "2026-07-01",
   },
   {
     id: "crispy-chicken",
@@ -23,6 +25,8 @@ export const menuItems: MenuItem[] = [
     name: "Crispy Chicken",
     description: "Golden chicken, fresh lettuce & sauce",
     price: 10.99,
+    popular: true,
+    dateAdded: "2026-07-05",
   },
   {
     id: "bacon-smash",
@@ -30,6 +34,8 @@ export const menuItems: MenuItem[] = [
     name: "Bacon Smash",
     description: "Double beef patty, crispy bacon, smoked cheddar",
     price: 13.99,
+    popular: true,
+    dateAdded: "2026-07-10",
   },
   {
     id: "spicy-inferno",
@@ -37,6 +43,8 @@ export const menuItems: MenuItem[] = [
     name: "Spicy Inferno",
     description: "Beef patty, jalapeños, pepper jack, spicy mayo",
     price: 13.49,
+    popular: false,
+    dateAdded: "2026-07-18",
   },
   {
     id: "mushroom-swiss",
@@ -44,6 +52,8 @@ export const menuItems: MenuItem[] = [
     name: "Mushroom Swiss",
     description: "Beef patty, sautéed mushrooms, melted swiss",
     price: 12.49,
+    popular: false,
+    dateAdded: "2026-07-22",
   },
   {
     id: "veggie-stack",
@@ -51,6 +61,8 @@ export const menuItems: MenuItem[] = [
     name: "Veggie Stack",
     description: "Plant-based patty, lettuce, tomato, house sauce",
     price: 11.99,
+    popular: false,
+    dateAdded: "2026-08-01",
   },
 
   // sides (6)
@@ -60,6 +72,8 @@ export const menuItems: MenuItem[] = [
     name: "Fire Fries",
     description: "Crispy fries, cheese sauce & toppings",
     price: 6.99,
+    popular: true,
+    dateAdded: "2026-07-03",
   },
   {
     id: "classic-fries",
@@ -67,6 +81,8 @@ export const menuItems: MenuItem[] = [
     name: "Classic Fries",
     description: "Golden, crispy, lightly salted",
     price: 4.49,
+    popular: true,
+    dateAdded: "2026-07-01",
   },
   {
     id: "onion-rings",
@@ -74,6 +90,8 @@ export const menuItems: MenuItem[] = [
     name: "Onion Rings",
     description: "Beer-battered, crispy fried",
     price: 5.99,
+    popular: false,
+    dateAdded: "2026-07-12",
   },
   {
     id: "loaded-nachos",
@@ -81,6 +99,8 @@ export const menuItems: MenuItem[] = [
     name: "Loaded Nachos",
     description: "Tortilla chips, cheese sauce, jalapeños",
     price: 7.49,
+    popular: false,
+    dateAdded: "2026-07-20",
   },
   {
     id: "mozzarella-sticks",
@@ -88,6 +108,8 @@ export const menuItems: MenuItem[] = [
     name: "Mozzarella Sticks",
     description: "Golden fried, served with marinara",
     price: 6.49,
+    popular: false,
+    dateAdded: "2026-07-25",
   },
   {
     id: "coleslaw",
@@ -95,6 +117,8 @@ export const menuItems: MenuItem[] = [
     name: "Coleslaw",
     description: "Fresh, creamy, made daily",
     price: 3.99,
+    popular: false,
+    dateAdded: "2026-08-05",
   },
 
   // drinks (3)
@@ -104,6 +128,8 @@ export const menuItems: MenuItem[] = [
     name: "Cola",
     description: "Ice-cold classic",
     price: 2.99,
+    popular: true,
+    dateAdded: "2026-07-01",
   },
   {
     id: "lemonade",
@@ -111,6 +137,8 @@ export const menuItems: MenuItem[] = [
     name: "Fresh Lemonade",
     description: "Hand-squeezed, lightly sweet",
     price: 3.49,
+    popular: true,
+    dateAdded: "2026-07-08",
   },
   {
     id: "iced-tea",
@@ -118,6 +146,8 @@ export const menuItems: MenuItem[] = [
     name: "Iced Tea",
     description: "Brewed fresh, served cold",
     price: 2.99,
+    popular: false,
+    dateAdded: "2026-07-15",
   },
 
   // sauces (3)
@@ -127,6 +157,8 @@ export const menuItems: MenuItem[] = [
     name: "Signature Sauce",
     description: "Our house-made secret blend",
     price: 0.99,
+    popular: true,
+    dateAdded: "2026-07-01",
   },
   {
     id: "spicy-mayo",
@@ -134,6 +166,8 @@ export const menuItems: MenuItem[] = [
     name: "Spicy Mayo",
     description: "Creamy with a kick",
     price: 0.99,
+    popular: false,
+    dateAdded: "2026-07-14",
   },
   {
     id: "cheese-sauce",
@@ -141,6 +175,8 @@ export const menuItems: MenuItem[] = [
     name: "Cheese Sauce",
     description: "Warm, melty, dippable",
     price: 0.99,
+    popular: false,
+    dateAdded: "2026-07-28",
   },
 ];
 
@@ -150,23 +186,31 @@ export const combos: Combo[] = [
     name: "Classic Combo",
     includes: ["Classic Smash", "+ Fries", "+ Drink"],
     price: 16.99,
+    popular: true,
+    dateAdded: "2026-07-01",
   },
   {
     id: "bacon-combo",
     name: "Bacon Combo",
     includes: ["Bacon Smash", "+ Fries", "+ Drink"],
     price: 17.99,
+    popular: true,
+    dateAdded: "2026-07-10",
   },
   {
     id: "spicy-combo",
     name: "Spicy Combo",
     includes: ["Spicy Inferno", "+ Fries", "+ Drink"],
     price: 17.49,
+    popular: false,
+    dateAdded: "2026-07-18",
   },
   {
     id: "chicken-combo",
     name: "Chicken Combo",
     includes: ["Crispy Chicken", "+ Fries", "+ Drink"],
     price: 15.99,
+    popular: true,
+    dateAdded: "2026-07-05",
   },
 ];

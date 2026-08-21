@@ -11,6 +11,8 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  popular: boolean;
+  dateAdded: string;
 }
 
 export interface Combo {
@@ -18,4 +20,6 @@ export interface Combo {
   name: string;
   includes: string[];
   price: number;
+  popular: boolean;
+  dateAdded: string;
 }
