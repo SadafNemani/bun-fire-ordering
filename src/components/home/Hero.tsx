@@ -6,6 +6,7 @@ import Text from "../typography/Text";
 import Button from "../ui/Button";
 import StarRating from "../ui/StarRating";
 import { siteContent } from "@/data/site-content";
+import { Flame } from "lucide-react";
 
 export default function HomeHero() {
   const { hero } = siteContent.home;
@@ -13,7 +14,7 @@ export default function HomeHero() {
   return (
     <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
       <div className="flex flex-col items-start gap-5">
-        <Label>{hero.label}</Label>
+        <Label icon={Flame}>{hero.label}</Label>
 
         <Heading as="h1" size="hero">
           {hero.title.map((line) => (
