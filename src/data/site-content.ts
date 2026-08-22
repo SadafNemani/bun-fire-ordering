@@ -3,7 +3,7 @@ export const siteContent = {
     hero: {
       label: "FRESH • FAST • LOCAL",
       title: ["BIG FLAVOR.", "NO WAIT."],
-      description: "Juicy smashed burgers, crispy sides, and cold drinks — ready when you are.",
+      description: "Juicy smashed burgers, crispy sides,\nand cold drinks — ready when you are.",
       buttonPrimary: "ORDER NOW",
       buttonSecondary: "VIEW MENU",
     },

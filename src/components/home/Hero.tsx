@@ -20,9 +20,9 @@ export default function HomeHero() {
           {hero.title}
         </Heading>
 
-        <Text size="body">{hero.description}</Text>
-
-        <StarRating count={5}>Loved by burger lovers.</StarRating>
+        <Text size="body" color="secondary" className="whitespace-pre-line">
+          {hero.description}
+        </Text>
 
         <div className="flex flex-wrap gap-4">
           <Link href="/checkout">
@@ -32,6 +32,8 @@ export default function HomeHero() {
             <Button variant="secondary">{hero.buttonSecondary}</Button>
           </Link>
         </div>
+
+        <StarRating count={5}>Loved by burger lovers.</StarRating>
       </div>
 
       <div className="rounded-card relative h-80 w-full overflow-hidden md:h-120">
