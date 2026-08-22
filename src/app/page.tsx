@@ -34,7 +34,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section background="white">
+      <Section className="bg-primary py-0">
         <Container>
           <CTABanner
             variant="hero"

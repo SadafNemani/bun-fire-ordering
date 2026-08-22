@@ -18,7 +18,7 @@ export const siteContent = {
     ],
     cta: {
       title: "HUNGRY YET?",
-      description: "Your next favorite meal is one click away.",
+      description: "Your next favorite meal\nis one click away.",
       buttonPrimary: "ORDER NOW",
     },
   },
