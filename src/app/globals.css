@@ -28,15 +28,15 @@
   --font-script: var(--font-script);
 
   /* Font Size */
-  --text-hero-title: clamp(2.5rem, 1.5rem + 4.5vw, 6.875rem); /* 40px → 110px */
-  --text-heading-lg: clamp(2rem, 1.3rem + 3vw, 5.3125rem); /* 32px → 85px */
-  --text-heading-md: clamp(1.75rem, 1.3rem + 2vw, 4rem); /* 28px → 64px */
+  --text-hero-title: clamp(3.3rem, 2rem + 4.5vw, 6.875rem); /* 48px → 110px */
+  --text-heading-lg: clamp(2.5rem, 1.7rem + 3.5vw, 5.3125rem); /* 40px → 85px */
+  --text-heading-md: clamp(2.25rem, 1.7rem + 2.5vw, 4rem); /* 36px → 64px */
   --text-section-label: clamp(0.875rem, 0.83rem + 0.15vw, 1rem); /* 14px → 16px */
   --text-item-title: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem); /* 18px → 22px */
   --text-price: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem); /* 18px → 22px */
   --text-body: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem); /* 15px → 16px */
   --text-body-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem); /* 13px → 14px */
-  --text-button: 1.125rem;
+  --text-button: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16px → 18px */
 
   --navbar-clearance: 10px;
 }
