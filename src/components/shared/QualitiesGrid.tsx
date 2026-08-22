@@ -22,17 +22,17 @@ interface QualitiesGridProps {
 export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
   if (variant === "home") {
     return (
-      <div className="divide-accent bg-charcoal rounded-card flex flex-col divide-y md:flex-row md:divide-x md:divide-y-0">
+      <div className="divide-accent bg-charcoal flex flex-col divide-y overflow-hidden md:flex-row md:divide-x md:divide-y-0">
         {(items as QualityBasic[]).map((item) => {
           const Icon = item.icon;
           return (
-            <div key={item.label} className="flex flex-1 items-center gap-4 px-8 py-6">
-              <span className="rounded-button border-accent flex h-14 w-14 shrink-0 items-center justify-center border">
-                <Icon className="text-accent h-6 w-6" />
+            <div key={item.label} className="flex flex-1 items-center gap-4 px-8">
+              <span className="rounded-button border-accent flex h-16 w-16 shrink-0 items-center justify-center border-2">
+                <Icon className="text-accent h-8 w-8" />
               </span>
               <div className="flex flex-col gap-1">
                 <span className="text-[24px] font-extrabold text-white">{item.label}</span>
-                <span className="text-surface-secondary text-button font-medium">
+                <span className="text-surface-secondary text-button font-medium whitespace-pre-line">
                   {item.description}
                 </span>
               </div>

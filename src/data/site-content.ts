@@ -13,8 +13,8 @@ export const siteContent = {
     },
     qualities: [
       { label: "Fast", description: "Ready in minutes" },
-      { label: "Fresh", description: "Quality ingredients every day" },
-      { label: "Easy", description: "Order online, skip the call" },
+      { label: "Fresh", description: "Quality ingredients\nevery day" },
+      { label: "Easy", description: "Order online,\nskip the call" },
     ],
     cta: {
       title: "HUNGRY YET?",

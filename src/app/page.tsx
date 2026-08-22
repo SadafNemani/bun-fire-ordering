@@ -28,7 +28,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section background="cream">
+      <Section className="bg-charcoal">
         <Container>
           <QualitiesSection />
         </Container>
