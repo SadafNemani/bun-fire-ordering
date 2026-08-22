@@ -16,12 +16,8 @@ export default function HomeHero() {
       <div className="flex flex-col items-start gap-5">
         <Label icon={Flame}>{hero.label}</Label>
 
-        <Heading as="h1" size="hero">
-          {hero.title.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+        <Heading as="h1" size="hero" highlightLine={1}>
+          {hero.title}
         </Heading>
 
         <Text size="body">{hero.description}</Text>
