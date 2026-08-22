@@ -10,8 +10,8 @@ export default function AddressSection() {
   const { address } = siteContent.about;
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-8 md:mt-30">
+      <div className="flex flex-col items-center gap-2 text-center">
         <Label>{address.label}</Label>
         <Heading as="h2" size="md">
           {address.title}
@@ -19,7 +19,7 @@ export default function AddressSection() {
         <UnderlineSwash />
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[3fr_7fr]">
         <div className="flex flex-col gap-4">
           <AddressInfoCard
             icon={MapPin}

@@ -54,14 +54,14 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
               background="white"
               className="flex-row items-center gap-4 sm:flex-1"
             >
-              <span className="rounded-pill bg-primary flex h-14 w-14 shrink-0 items-center justify-center">
+              <span className="rounded-button bg-primary flex h-14 w-14 shrink-0 items-center justify-center">
                 <Icon className="text-surface h-6 w-6" />
               </span>
               <div className="flex flex-col">
-                <span className="font-heading text-charcoal text-[32px] leading-none font-extrabold">
+                <span className="font-heading text-charcoal text-item-title leading-none font-extrabold">
                   {item.highlightedLabel}
                 </span>
-                <span className="font-heading text-primary text-[24px] leading-none font-extrabold">
+                <span className="font-heading text-primary text-item-title leading-none font-bold">
                   {item.normalLabel}
                 </span>
                 <span className="font-body text-text-secondary mt-1 text-[15px]">

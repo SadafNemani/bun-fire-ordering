@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { SiInstagram, SiFacebook } from "react-icons/si";
 
@@ -39,8 +40,12 @@ export default function CTASection({
           <span className="font-body text-body text-text-secondary font-medium">
             {qrDescription}
           </span>
-          <a href={qrLinkHref} className="font-body text-button text-primary font-bold">
+          <a
+            href={qrLinkHref}
+            className="font-body text-button text-primary flex items-center font-bold"
+          >
             {qrLinkLabel}
+            <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </div>

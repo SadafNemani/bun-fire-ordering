@@ -19,19 +19,21 @@ export default function AboutHero() {
 
   return (
     <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col items-start gap-5">
         <Label>{hero.label}</Label>
-        <Heading as="h1" size="lg">
-          {hero.title.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+        <Heading as="h1" size="md" highlightLine={1}>
+          {hero.title}
         </Heading>
-        <Text>{hero.description}</Text>
+        <Text color="secondary" weight="semibold">
+          {hero.description}
+        </Text>
         <div className="flex flex-col items-start gap-1">
           <ScriptText>{hero.scriptText}</ScriptText>
           <UnderlineSwash />
+        </div>
+
+        <div className="w-full md:absolute md:top-full md:left-0 md:mt-6 md:w-[80%]">
+          <QualitiesGrid variant="about" items={qualities} />
         </div>
       </div>
 
@@ -42,10 +44,6 @@ export default function AboutHero() {
           fill
           className="object-cover"
         />
-      </div>
-
-      <div className="relative z-10 -mt-6 w-full md:absolute md:bottom-0 md:left-0 md:mt-0 md:w-auto md:translate-y-1/2">
-        <QualitiesGrid variant="about" items={qualities} />
       </div>
     </div>
   );
