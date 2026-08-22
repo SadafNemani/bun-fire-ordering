@@ -26,7 +26,7 @@ export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
         {(items as QualityBasic[]).map((item) => {
           const Icon = item.icon;
           return (
-            <div key={item.label} className="flex flex-1 items-center gap-4 px-8">
+            <div key={item.label} className="flex flex-1 items-center gap-4 px-8 py-8 md:py-0">
               <span className="rounded-button border-accent flex h-16 w-16 shrink-0 items-center justify-center border-2">
                 <Icon className="text-accent h-8 w-8" />
               </span>
