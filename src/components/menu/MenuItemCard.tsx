@@ -22,19 +22,19 @@ export default function MenuItemCard({
 }: MenuItemCardProps) {
   if (variant === "horizontal") {
     return (
-      <Card background="cream" className={cn("w-72 flex-row gap-4", className)}>
+      <Card background="cream" className={cn("w-94 shrink-0 flex-row gap-4", className)}>
         <div className="rounded-image relative h-24 w-24 shrink-0 overflow-hidden">
           <Image src={image} alt={item.name} fill className="object-cover" />
         </div>
         <div className="flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-1">
-            <span className="font-body text-item-title0 font-extrabold">{item.name}</span>
+            <span className="font-body text-item-title font-extrabold">{item.name}</span>
             <span className="font-body text-button text-text-secondary line-clamp-2">
               {item.description}
             </span>
-          </div>
-          <div className="flex items-center justify-between">
             <PriceText value={item.price} />
+          </div>
+          <div className="flex flex-col items-end">
             <AddToCartButton onClick={onAddToCart} />
           </div>
         </div>
@@ -53,9 +53,9 @@ export default function MenuItemCard({
             {item.name}
           </span>
           <span className="font-body text-button text-text-secondary">{item.description}</span>
-        </div>
-        <div className="flex items-center justify-between">
           <PriceText value={item.price} />
+        </div>
+        <div className="flex flex-col items-end">
           <AddToCartButton onClick={onAddToCart} />
         </div>
       </div>
