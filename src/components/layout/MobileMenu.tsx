@@ -77,7 +77,7 @@ export default function MobileMenu({
               })}
             </nav>
 
-            <div className="mt-auto">
+            <div>
               {showCart ? (
                 <CartButton itemCount={itemCount} total={total} onClick={onClose} />
               ) : (
