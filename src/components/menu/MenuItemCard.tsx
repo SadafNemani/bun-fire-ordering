@@ -53,9 +53,9 @@ export default function MenuItemCard({
             {item.name}
           </span>
           <span className="font-body text-button text-text-secondary">{item.description}</span>
-          <PriceText value={item.price} />
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex items-center justify-between">
+          <PriceText value={item.price} />
           <AddToCartButton onClick={onAddToCart} />
         </div>
       </div>
