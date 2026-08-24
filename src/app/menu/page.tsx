@@ -16,6 +16,7 @@ import { menuItems, combos, categories } from "@/data/menu";
 import { siteContent } from "@/data/site-content";
 import { useCart } from "@/hooks/useCart";
 import { CategoryId } from "@/types/menu";
+import { cn } from "@/utils/cn";
 
 const categoryIcons: Record<CategoryId, typeof Hamburger> = {
   burgers: Hamburger,
@@ -72,8 +73,8 @@ export default function MenuPage() {
 
       <Section background="white">
         <Container>
-          <div className="flex flex-col gap-10 md:flex-row md:items-start">
-            <aside className="flex w-full flex-col gap-6 md:w-[30%]">
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:pb-0">
+            <aside className="hidden w-full flex-col gap-6 md:flex md:w-[30%]">
               <CategoryTabs
                 categories={categoryTabItems}
                 activeCategory={activeCategory}
@@ -137,6 +138,37 @@ export default function MenuPage() {
                   images={menuItemImages}
                 />
               )}
+            </div>
+          </div>
+
+          <div className="fixed right-0 bottom-6 left-0 z-40 flex justify-center px-4 md:hidden">
+            <div className="flex items-end gap-3 overflow-x-auto px-4 py-2 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {categoryTabItems.map((cat) => {
+                const Icon = cat.icon;
+                const isActive = cat.id === activeCategory;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={cn(
+                      "rounded-button shadow-button flex shrink-0 flex-col items-center justify-center transition-all duration-300",
+                      isActive
+                        ? "bg-primary text-surface h-16 w-16"
+                        : "bg-surface text-charcoal h-12 w-12"
+                    )}
+                  >
+                    <Icon className={cn(isActive ? "h-6 w-6" : "h-5 w-5")} />
+                    <span
+                      className={cn(
+                        "mt-0.5 leading-none",
+                        isActive ? "text-[10px] font-bold" : "text-[9px] font-medium"
+                      )}
+                    >
+                      {cat.label}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </Container>
