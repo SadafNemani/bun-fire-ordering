@@ -15,22 +15,25 @@ export default function CartButton({ itemCount, total, onClick, className }: Car
     <button
       onClick={onClick}
       className={cn(
-        "bg-surface-secondary rounded-button shadow-button flex cursor-pointer items-center gap-3 px-7.5 py-2.5",
+        "rounded-button bg-primary flex cursor-pointer items-center gap-2.5 px-4 py-2.5",
         className
       )}
     >
-      <span className="relative flex h-10 w-10 items-center justify-center">
-        <ShoppingBag className="text-charcoal h-8 w-8" />
+      <span className="relative flex h-6 w-6 items-center justify-center">
+        <ShoppingBag className="text-surface h-5 w-5" />
         {itemCount > 0 && (
-          <Badge variant="count" className="absolute -top-1 -right-1">
+          <Badge
+            variant="count"
+            className="bg-accent text-charcoal absolute -top-2 -right-2 h-4 min-w-4 px-1 text-[10px]"
+          >
             {itemCount}
           </Badge>
         )}
       </span>
-      <span className="flex flex-col items-start">
-        <span className="text-text-secondary text-button">View Cart</span>
-        <PriceText value={total} />
-      </span>
+      <div className="flex flex-col items-start leading-tight">
+        <span className="text-surface/80 text-[11px] font-medium">View Cart</span>
+        <PriceText value={total} className="text-surface text-[14px]" />
+      </div>
     </button>
   );
 }
