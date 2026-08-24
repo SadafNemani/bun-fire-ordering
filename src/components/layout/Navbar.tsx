@@ -12,6 +12,7 @@ import CartButton from "../ui/CartButton";
 import MobileMenu from "./MobileMenu";
 import { useCart } from "@/hooks/useCart";
 import { cn } from "@/utils/cn";
+import CartButtonCompact from "../ui/CartButtonCompact";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -49,7 +50,13 @@ export default function Navbar() {
         )}
       >
         <Link href="/" className="transition-transform duration-200 hover:scale-105">
-          <Image src="/logo/bun&fire-logo.svg" width={197} height={36} alt="Bun&Fire logo" />
+          <Image
+            src="/logo/bun&fire-logo.svg"
+            width={197}
+            height={36}
+            alt="Bun&Fire logo"
+            className="h-6 w-auto md:h-9"
+          />
         </Link>
 
         <nav className="hidden items-center gap-2 md:flex">
@@ -89,13 +96,17 @@ export default function Navbar() {
           )}
         </div>
 
-        <button
-          onClick={() => setMobileOpen(true)}
-          className="rounded-button bg-background text-charcoal shadow-button flex h-11 w-11 items-center justify-center md:hidden"
-          aria-label="Open menu"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          {showCart && <CartButtonCompact itemCount={displayItemCount} onClick={openCart} />}
+
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="rounded-button bg-background text-charcoal shadow-button flex h-11 w-11 items-center justify-center"
+            aria-label="Open menu"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
       </div>
 
       <MobileMenu
@@ -104,8 +115,8 @@ export default function Navbar() {
         navLinks={navLinks}
         pathname={pathname}
         showCart={showCart}
-        itemCount={itemCount}
-        total={total}
+        itemCount={displayItemCount}
+        total={displayTotal}
         onOpenCart={openCart}
       />
     </header>
