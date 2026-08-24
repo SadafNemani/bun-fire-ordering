@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, type ReactNode } from "react";
+import { createContext, useState, type ReactNode } from "react";
 import type { CartItem } from "@/types/order";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
@@ -9,12 +9,16 @@ interface CartContextValue {
   addItem: (item: CartItem) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
+  isOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 export const CartContext = createContext<CartContextValue | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useLocalStorage<CartItem[]>("bun-and-fire-cart", []);
+  const [isOpen, setIsOpen] = useState(false);
 
   const addItem = (item: CartItem) => {
     setItems((prev) => {
@@ -37,7 +41,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, updateQuantity }}>
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        removeItem,
+        updateQuantity,
+        isOpen,
+        openCart: () => setIsOpen(true),
+        closeCart: () => setIsOpen(false),
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

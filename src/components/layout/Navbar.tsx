@@ -23,7 +23,7 @@ const cartVisiblePaths = ["/menu", "/checkout", "/order-confirmation"];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { itemCount, total } = useCart();
+  const { itemCount, total, openCart } = useCart();
   const hasMounted = useHasMounted();
   const showCart = cartVisiblePaths.includes(pathname);
 
@@ -79,7 +79,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           {showCart ? (
-            <CartButton itemCount={displayItemCount} total={displayTotal} onClick={() => {}} />
+            <CartButton itemCount={displayItemCount} total={displayTotal} onClick={openCart} />
           ) : (
             <Link href="/menu">
               <Button variant="primary" className="h-12.5 px-6 text-sm">
@@ -106,6 +106,7 @@ export default function Navbar() {
         showCart={showCart}
         itemCount={itemCount}
         total={total}
+        onOpenCart={openCart}
       />
     </header>
   );

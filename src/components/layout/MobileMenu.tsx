@@ -20,6 +20,7 @@ interface MobileMenuProps {
   showCart: boolean;
   itemCount: number;
   total: number;
+  onOpenCart: () => void;
 }
 
 export default function MobileMenu({
@@ -30,6 +31,7 @@ export default function MobileMenu({
   showCart,
   itemCount,
   total,
+  onOpenCart,
 }: MobileMenuProps) {
   return (
     <AnimatePresence>
@@ -79,7 +81,14 @@ export default function MobileMenu({
 
             <div>
               {showCart ? (
-                <CartButton itemCount={itemCount} total={total} onClick={onClose} />
+                <CartButton
+                  itemCount={itemCount}
+                  total={total}
+                  onClick={() => {
+                    onClose();
+                    onOpenCart();
+                  }}
+                />
               ) : (
                 <Link href="/menu" onClick={onClose}>
                   <Button variant="primary" className="h-12.5 w-full justify-center text-sm">
