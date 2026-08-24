@@ -37,7 +37,7 @@ export default function CartItemRow({ item, image }: CartItemRowProps) {
       <button
         onClick={() => removeItem(item.id)}
         aria-label={`Remove ${item.name} from cart`}
-        className="text-text-secondary hover:text-primary self-start transition-colors"
+        className="text-text-secondary hover:text-primary cursor-pointer self-start transition-colors"
       >
         <Trash2 className="h-5 w-5" />
       </button>

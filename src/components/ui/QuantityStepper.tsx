@@ -23,12 +23,12 @@ export default function QuantityStepper({
         className
       )}
     >
-      <button onClick={onDecrease} aria-label="Decrease quantity">
-        <Minus className="text-charcoal h-4 w-4" />
+      <button onClick={onDecrease} aria-label="Decrease quantity" className="cursor-pointer">
+        <Minus className="text-charcoal hover:text-primary h-4 w-4" />
       </button>
       <span className="text-charcoal text-button font-medium">{value}</span>
-      <button onClick={onIncrease} aria-label="Increase quantity">
-        <Plus className="text-charcoal h-4 w-4" />
+      <button onClick={onIncrease} aria-label="Increase quantity" className="cursor-pointer">
+        <Plus className="text-charcoal hover:text-primary h-4 w-4" />
       </button>
     </div>
   );
