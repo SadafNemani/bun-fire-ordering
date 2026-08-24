@@ -94,7 +94,7 @@ export default function MenuPage() {
                 <div className="flex items-center gap-3">
                   {(() => {
                     const Icon = categoryIcons[activeCategory];
-                    return <Icon className="text-primary h-7 w-7" />;
+                    return <Icon className="text-surface fill-primary h-20 w-20" strokeWidth={1} />;
                   })()}
                   <div className="flex flex-col">
                     <Heading as="h2" size="md" className="text=[28px]">

@@ -17,7 +17,8 @@ export default function Button({
     <button
       className={cn(
         "rounded-button font-body inline-flex cursor-pointer items-center gap-2 px-6 py-3 font-semibold transition-colors",
-        variant === "primary" && "bg-primary text-surface hover:bg-primary/90",
+        variant === "primary" &&
+          "bg-primary text-surface hover:bg-primary/90 hover:text-surface shadow-button",
         variant === "secondary" &&
           "border-charcoal text-charcoal hover:bg-charcoal/5 border bg-transparent",
         className

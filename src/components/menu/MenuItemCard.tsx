@@ -29,7 +29,7 @@ export default function MenuItemCard({
         <div className="flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-1">
             <span className="font-body text-item-title font-extrabold">{item.name}</span>
-            <span className="font-body text-button text-text-secondary line-clamp-2">
+            <span className="font-body text-body text-text-secondary line-clamp-2">
               {item.description}
             </span>
             <PriceText value={item.price} />
@@ -47,15 +47,15 @@ export default function MenuItemCard({
       <div className="rounded-t-card relative h-48 w-full overflow-hidden">
         <Image src={image} alt={item.name} fill className="object-cover" />
       </div>
-      <div className="flex flex-col gap-3 px-5 pb-5">
+      <div className="flex flex-col justify-around gap-3 px-5 pb-5">
         <div className="flex flex-col gap-1">
           <span className="font-body text-item-title text-charcoal font-extrabold">
             {item.name}
           </span>
-          <span className="font-body text-button text-text-secondary">{item.description}</span>
+          <span className="font-body text-body text-text-secondary">{item.description}</span>
         </div>
-        <div className="flex items-center justify-between">
-          <PriceText value={item.price} />
+        <PriceText value={item.price} />
+        <div className="flex flex-col items-end">
           <AddToCartButton onClick={onAddToCart} />
         </div>
       </div>

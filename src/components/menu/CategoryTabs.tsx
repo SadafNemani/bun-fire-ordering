@@ -30,7 +30,7 @@ export default function CategoryTabs({ categories, activeCategory, onChange }: C
             key={category.id}
             onClick={() => onChange(category.id)}
             className={cn(
-              "rounded-button flex items-center gap-3 px-4 py-3 text-left transition-colors",
+              "rounded-button flex cursor-pointer items-center gap-3 px-4 py-3 text-left transition-colors",
               isActive ? "bg-primary text-surface" : "bg-surface text-charcoal hover:bg-background"
             )}
           >
