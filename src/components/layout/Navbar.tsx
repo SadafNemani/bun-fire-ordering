@@ -1,5 +1,6 @@
 "use client";
 
+import { useHasMounted } from "@/hooks/useHasMounted";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +24,12 @@ const cartVisiblePaths = ["/menu", "/checkout", "/order-confirmation"];
 export default function Navbar() {
   const pathname = usePathname();
   const { itemCount, total } = useCart();
+  const hasMounted = useHasMounted();
   const showCart = cartVisiblePaths.includes(pathname);
+
+  const displayItemCount = hasMounted ? itemCount : 0;
+  const displayTotal = hasMounted ? total : 0;
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -73,7 +79,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           {showCart ? (
-            <CartButton itemCount={itemCount} total={total} onClick={() => {}} />
+            <CartButton itemCount={displayItemCount} total={displayTotal} onClick={() => {}} />
           ) : (
             <Link href="/menu">
               <Button variant="primary" className="h-12.5 px-6 text-sm">
