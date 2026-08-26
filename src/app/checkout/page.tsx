@@ -28,7 +28,7 @@ const qualityIcons = [Clock3, Truck, ShieldCheck];
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { items, total } = useCart();
+  const { items, total, clearCart } = useCart();
   const { title, description, qualities } = siteContent.checkout;
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -62,6 +62,8 @@ export default function CheckoutPage() {
         createdAt: new Date().toISOString(),
       })
     );
+
+    clearCart();
 
     window.open(whatsappUrl, "_blank");
     router.push("/order-confirmation");

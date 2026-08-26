@@ -9,7 +9,8 @@ export function useCart() {
     throw new Error("useCart must be used within a CartProvider");
   }
 
-  const { items, addItem, removeItem, updateQuantity, isOpen, openCart, closeCart } = context;
+  const { items, addItem, removeItem, updateQuantity, clearCart, isOpen, openCart, closeCart } =
+    context;
 
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -21,6 +22,7 @@ export function useCart() {
     addItem,
     removeItem,
     updateQuantity,
+    clearCart,
     isOpen,
     openCart,
     closeCart,
