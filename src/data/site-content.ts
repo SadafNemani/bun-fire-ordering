@@ -117,6 +117,7 @@ export const siteContent = {
         placeholder: "e.g. No onions, extra sauce, pick up at the side door...",
       },
       submitButton: "PLACE ORDER",
+      submitNote: "You'll be redirected to WhatsApp to review and send your order.",
       termsText: "By placing this order, you agree to our Terms & Conditions.",
     },
     summarySidebar: {

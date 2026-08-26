@@ -23,7 +23,7 @@ export function formatOrderMessage({
     .join("\n");
 
   const lines = [
-    `🔥 New Order — ${brand.name}`,
+    `\u{1F525} New Order — ${brand.name}`,
     `Order #${orderId}`,
     "",
     itemLines,
@@ -41,7 +41,7 @@ export function formatOrderMessage({
     lines.push(`Instructions: ${customer.specialInstructions}`);
   }
 
-  return lines.join("\n");
+  return lines.join("\r\n");
 }
 
 export function buildWhatsAppUrl(message: string): string {
