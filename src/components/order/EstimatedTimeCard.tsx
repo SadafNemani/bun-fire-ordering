@@ -33,7 +33,7 @@ export default function EstimatedTimeCard({
         <span
           className={cn(
             "font-body text-primary font-extrabold",
-            isLarge ? "text-[50px] leading-none" : "text-[20px]"
+            isLarge ? "text-heading-md leading-none" : "text-[20px]"
           )}
         >
           {time}

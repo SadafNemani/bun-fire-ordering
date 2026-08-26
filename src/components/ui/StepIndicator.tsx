@@ -9,6 +9,7 @@ interface Step {
 interface StepIndicatorProps {
   steps: Step[];
   currentStep: number;
+  className?: string;
 }
 
 function getStatus(index: number, currentStep: number): StepStatus {
@@ -17,9 +18,9 @@ function getStatus(index: number, currentStep: number): StepStatus {
   return "upcoming";
 }
 
-export default function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
+export default function StepIndicator({ steps, currentStep, className }: StepIndicatorProps) {
   return (
-    <div className="flex items-center">
+    <div className={cn("flex items-center", className)}>
       {steps.map((step, index) => {
         const status = getStatus(index, currentStep);
         const isLast = index === steps.length - 1;
