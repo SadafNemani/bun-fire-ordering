@@ -19,7 +19,6 @@ const imageMap = Object.fromEntries([
 export default function CartDrawer() {
   const { items, itemCount, total, isOpen, closeCart } = useCart();
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  console.log("isDesktop:", isDesktop);
 
   const panelRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
