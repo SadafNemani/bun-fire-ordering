@@ -25,7 +25,7 @@ export default function HomeHero() {
         </Text>
 
         <div className="flex flex-wrap gap-4">
-          <Link href="/checkout">
+          <Link href="/menu">
             <Button variant="primary">{hero.buttonPrimary}</Button>
           </Link>
           <Link href="/menu">
