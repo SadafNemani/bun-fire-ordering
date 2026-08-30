@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, ShoppingBag } from "lucide-react";
+import { X, ShoppingBag, Plus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import CartItemRow from "./CartItemRow";
 import Button from "@/components/ui/Button";
@@ -16,8 +17,11 @@ const imageMap = Object.fromEntries([
   ...combos.map((c) => [c.id, `/images/combos/${c.id}.jpg`]),
 ]);
 
+const UPSELL_FRIES_ID = "fire-fries";
+const UPSELL_DRINK_ID = "cola";
+
 export default function CartDrawer() {
-  const { items, itemCount, total, isOpen, closeCart } = useCart();
+  const { items, itemCount, total, isOpen, closeCart, addItem } = useCart();
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const panelRef = useRef<HTMLDivElement>(null);
@@ -26,6 +30,34 @@ export default function CartDrawer() {
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const tax = subtotal * 0.06;
+
+  const hasFries = items.some((i) => i.id === UPSELL_FRIES_ID);
+  const hasDrink = items.some((i) => i.id === UPSELL_DRINK_ID);
+  const showUpsell = items.length > 0 && (!hasFries || !hasDrink);
+
+  const upsellFries = menuItems.find((i) => i.id === UPSELL_FRIES_ID);
+  const upsellDrink = menuItems.find((i) => i.id === UPSELL_DRINK_ID);
+
+  const handleAddUpsell = () => {
+    if (!hasFries && upsellFries) {
+      addItem({
+        id: upsellFries.id,
+        name: upsellFries.name,
+        price: upsellFries.price,
+        quantity: 1,
+        category: upsellFries.category,
+      });
+    }
+    if (!hasDrink && upsellDrink) {
+      addItem({
+        id: upsellDrink.id,
+        name: upsellDrink.name,
+        price: upsellDrink.price,
+        quantity: 1,
+        category: upsellDrink.category,
+      });
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -146,6 +178,38 @@ export default function CartDrawer() {
                   {items.map((item) => (
                     <CartItemRow key={item.id} item={item} image={imageMap[item.id]} />
                   ))}
+
+                  {showUpsell && upsellFries && upsellDrink && (
+                    <div className="rounded-card bg-background flex items-center gap-3 p-4">
+                      <div className="rounded-image relative h-12 w-12 shrink-0 overflow-hidden">
+                        <Image
+                          src={imageMap[hasFries ? upsellDrink.id : upsellFries.id]}
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-body text-charcoal text-[14px] font-bold">
+                          {!hasFries && !hasDrink
+                            ? "Add our popular fries + a drink?"
+                            : !hasFries
+                              ? "Add our popular fries?"
+                              : "Add our popular drink?"}
+                        </p>
+                        <p className="font-body text-text-secondary text-[12px]">
+                          Make it a combo and save.
+                        </p>
+                      </div>
+                      <button
+                        onClick={handleAddUpsell}
+                        className="rounded-button bg-primary font-body text-surface flex items-center gap-1 px-3 py-1.5 text-[12px] font-bold"
+                      >
+                        <Plus className="h-3 w-3" />
+                        Add
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 <div className="border-surface-secondary flex flex-col gap-3 border-t px-6 pt-4 pb-6">
