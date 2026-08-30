@@ -69,12 +69,13 @@ export default function PopularPicksSlider({ images }: PopularPicksSliderProps) 
         ref={scrollRef}
         className="flex gap-5 overflow-x-auto pb-2 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
-        {popularItems.map((item) => (
+        {popularItems.map((item, index) => (
           <MenuItemCard
             key={item.id}
             item={item}
             image={images[item.id]}
             variant="horizontal"
+            isBestSeller={index === 0}
             onAddToCart={() =>
               addItem({
                 id: item.id,

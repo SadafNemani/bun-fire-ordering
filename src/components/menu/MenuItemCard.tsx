@@ -9,6 +9,7 @@ interface MenuItemCardProps {
   item: MenuItem;
   image: string;
   variant?: "horizontal" | "vertical";
+  isBestSeller?: boolean;
   onAddToCart?: () => void;
   className?: string;
 }
@@ -17,14 +18,31 @@ export default function MenuItemCard({
   item,
   image,
   variant = "vertical",
+  isBestSeller,
   onAddToCart,
   className,
 }: MenuItemCardProps) {
   if (variant === "horizontal") {
     return (
-      <Card background="cream" className={cn("w-94 shrink-0 flex-row gap-4", className)}>
+      <Card
+        background="cream"
+        className={cn(
+          "group hover:shadow-card w-94 shrink-0 flex-row gap-4 transition-all duration-300 hover:-translate-y-1",
+          className
+        )}
+      >
         <div className="rounded-image relative h-24 w-24 shrink-0 overflow-hidden">
-          <Image src={image} alt={item.name} fill className="object-cover" />
+          {isBestSeller && (
+            <span className="bg-primary text-surface absolute top-0 left-0 z-10 rounded-br-md px-2 py-0.5 text-[9px] font-bold uppercase">
+              Best Seller
+            </span>
+          )}
+          <Image
+            src={image}
+            alt={item.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-110"
+          />
         </div>
         <div className="flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-1">
