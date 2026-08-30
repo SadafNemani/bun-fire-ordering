@@ -25,12 +25,17 @@ export default function CTABanner({
     return (
       <div
         className={cn(
-          "rounded-card bg-primary flex flex-col items-center gap-8 overflow-hidden md:flex-row",
+          "rounded-card bg-primary flex flex-col items-center gap-8 md:flex-row",
           className
         )}
       >
-        <div className="relative h-64 w-full shrink-0 md:h-auto md:w-1/3 md:self-stretch">
-          <Image src={imageSrc} alt="" fill className="object-cover" />
+        <div className="relative h-64 w-full shrink-0 overflow-visible md:h-auto md:w-1/3 md:self-stretch">
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            className="object-cover drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]"
+          />
         </div>
 
         <div className="flex flex-1 flex-col gap-4 px-6 py-10 md:px-0">
