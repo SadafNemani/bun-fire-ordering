@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Hamburger, Layers, Salad, CupSoda, Droplet } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -44,6 +44,7 @@ const comboImages = Object.fromEntries(
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("burgers");
   const [sortOption, setSortOption] = useState<SortOption>("popular");
+  const contentRef = useRef<HTMLDivElement>(null);
   const { addItem } = useCart();
 
   const categoryTabItems = categories.map((cat) => ({
@@ -62,6 +63,10 @@ export default function MenuPage() {
       if (sortOption === "popular") return Number(b.popular) - Number(a.popular);
       return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime();
     });
+
+  useEffect(() => {
+    contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [activeCategory]);
 
   return (
     <>
@@ -90,7 +95,7 @@ export default function MenuPage() {
               />
             </aside>
 
-            <div className="flex w-full flex-col gap-6 md:w-[70%]">
+            <div ref={contentRef} className="flex w-full scroll-mt-24 flex-col gap-6 md:w-[70%]">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
                   {(() => {
