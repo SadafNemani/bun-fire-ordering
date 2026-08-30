@@ -28,11 +28,19 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <div className="relative h-12 overflow-hidden bg-white md:h-16">
+        <div className="bg-charcoal absolute inset-x-0 -bottom-1 h-full [clip-path:polygon(0_0,100%_100%,0_100%)]" />
+      </div>
+
       <Section className="bg-charcoal">
         <Container>
           <QualitiesSection />
         </Container>
       </Section>
+
+      <div className="relative h-12 overflow-hidden bg-white md:h-16">
+        <div className="bg-charcoal absolute inset-x-0 -top-1 h-full [clip-path:polygon(0_0,100%_100%,100%_0)]" />
+      </div>
 
       <Section className="bg-primary py-0">
         <Container>
