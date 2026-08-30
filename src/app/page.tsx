@@ -42,7 +42,7 @@ export default function HomePage() {
             description={cta.description}
             buttonLabel={cta.buttonPrimary}
             buttonHref="/menu"
-            imageSrc="/images/home-cta.jpg"
+            imageSrc="/images/home-cta.png"
           />
         </Container>
       </Section>

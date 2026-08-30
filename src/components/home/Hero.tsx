@@ -36,9 +36,9 @@ export default function HomeHero() {
         <StarRating count={5}>Loved by burger lovers.</StarRating>
       </div>
 
-      <div className="rounded-card relative h-80 w-full overflow-hidden md:h-120">
+      <div className="rounded-card relative h-80 w-full overflow-hidden md:h-130">
         <Image
-          src="/images/home-hero.jpg"
+          src="/images/home-hero.png"
           alt="Bun & Fire signature burger"
           fill
           priority

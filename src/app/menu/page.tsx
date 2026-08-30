@@ -91,7 +91,7 @@ export default function MenuPage() {
                 description={siteContent.menu.banner.description}
                 buttonLabel={siteContent.menu.banner.buttonPrimary}
                 buttonHref="#combos"
-                imageSrc="/images/combo-banner.jpg"
+                imageSrc="/images/combo-banner.png"
               />
             </aside>
 

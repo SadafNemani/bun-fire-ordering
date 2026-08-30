@@ -16,7 +16,7 @@ export default function MenuHero() {
       </div>
       <div className="rounded-card relative h-56 w-full overflow-hidden md:h-72">
         <Image
-          src="/images/menu-hero.jpg"
+          src="/images/menu-hero.png"
           alt="Bun & Fire menu spread"
           fill
           className="object-cover"
