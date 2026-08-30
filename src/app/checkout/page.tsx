@@ -124,19 +124,7 @@ export default function CheckoutPage() {
 
       <Section background="white">
         <Container>
-          <CTASection
-            qrImageSrc="/images/qr-code.png"
-            qrTitle={siteContent.about.cta.column1.title}
-            qrDescription={siteContent.about.cta.column1.description}
-            qrLinkLabel={siteContent.about.cta.column1.linkLabel}
-            qrLinkHref={siteContent.about.cta.column1.linkHref}
-            socialImageSrc="/images/social-food.jpg"
-            socialTitle={siteContent.about.cta.column2.title}
-            socialDescription={siteContent.about.cta.column2.description}
-            instagramHref="https://instagram.com/bunandfire"
-            facebookHref="https://facebook.com/bunandfire"
-            decorativeImageSrc="/images/about-cta-decorative.jpg"
-          />
+          <CTASection />
         </Container>
       </Section>
     </>
