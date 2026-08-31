@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import Card from "../ui/Card";
 
@@ -19,17 +22,29 @@ interface QualitiesGridProps {
   items: QualityBasic[] | QualityHighlighted[];
 }
 
+const iconVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 export default function QualitiesGrid({ variant, items }: QualitiesGridProps) {
   if (variant === "home") {
     return (
       <div className="divide-accent bg-charcoal flex flex-col divide-y overflow-hidden md:flex-row md:divide-x md:divide-y-0">
-        {(items as QualityBasic[]).map((item) => {
+        {(items as QualityBasic[]).map((item, index) => {
           const Icon = item.icon;
           return (
             <div key={item.label} className="flex flex-1 items-center gap-4 px-8 py-8 md:py-0">
-              <span className="rounded-button border-accent flex h-16 w-16 shrink-0 items-center justify-center border-2">
+              <motion.span
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={iconVariants}
+                transition={{ duration: 0.4, delay: index * 0.12, type: "spring", stiffness: 300 }}
+                className="rounded-button border-accent flex h-16 w-16 shrink-0 items-center justify-center border-2"
+              >
                 <Icon className="text-accent h-8 w-8" />
-              </span>
+              </motion.span>
               <div className="flex flex-col gap-1">
                 <span className="text-[24px] font-extrabold text-white">{item.label}</span>
                 <span className="text-surface-secondary text-button font-medium whitespace-pre-line">
