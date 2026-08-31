@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Label from "@/components/typography/Label";
@@ -38,6 +39,11 @@ export default function PopularPicksSlider({ images }: PopularPicksSliderProps) 
     }
   };
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col items-center gap-2 text-center">
@@ -70,22 +76,31 @@ export default function PopularPicksSlider({ images }: PopularPicksSliderProps) 
         className="flex gap-5 overflow-x-auto pb-2 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {popularItems.map((item, index) => (
-          <MenuItemCard
+          <motion.div
             key={item.id}
-            item={item}
-            image={images[item.id]}
-            variant="horizontal"
-            isBestSeller={index === 0}
-            onAddToCart={() =>
-              addItem({
-                id: item.id,
-                name: item.name,
-                price: item.price,
-                quantity: 1,
-                category: item.category,
-              })
-            }
-          />
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={cardVariants}
+            transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" as const }}
+          >
+            <MenuItemCard
+              key={item.id}
+              item={item}
+              image={images[item.id]}
+              variant="horizontal"
+              isBestSeller={index === 0}
+              onAddToCart={() =>
+                addItem({
+                  id: item.id,
+                  name: item.name,
+                  price: item.price,
+                  quantity: 1,
+                  category: item.category,
+                })
+              }
+            />
+          </motion.div>
         ))}
       </div>
     </div>
