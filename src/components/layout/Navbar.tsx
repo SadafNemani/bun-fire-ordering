@@ -73,7 +73,7 @@ export default function Navbar() {
                   <motion.span
                     layoutId="navbar-active-dot"
                     className="rounded-button bg-primary absolute -bottom-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}
               </Link>
