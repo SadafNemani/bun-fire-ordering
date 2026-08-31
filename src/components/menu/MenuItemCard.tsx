@@ -61,9 +61,20 @@ export default function MenuItemCard({
   }
 
   return (
-    <Card background="cream" className={cn("gap-4 p-0", className)}>
+    <Card
+      background="cream"
+      className={cn(
+        "group hover:shadow-card gap-4 p-0 transition-all duration-300 hover:-translate-y-1",
+        className
+      )}
+    >
       <div className="rounded-t-card relative h-48 w-full overflow-hidden">
-        <Image src={image} alt={item.name} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={item.name}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="flex flex-col justify-around gap-3 px-5 pb-5">
         <div className="flex flex-col gap-1">
