@@ -16,7 +16,7 @@ export default function HomeHero() {
       <div className="flex flex-col items-start gap-5">
         <Label icon={Flame}>{hero.label}</Label>
 
-        <Heading as="h1" size="hero" highlightLine={1}>
+        <Heading as="h1" size="hero" highlightLine={1} animate>
           {hero.title}
         </Heading>
 
