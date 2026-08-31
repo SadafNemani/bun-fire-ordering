@@ -24,10 +24,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const { itemCount, total, openCart } = useCart();
   const hasMounted = useHasMounted();
-  const showCart = itemCount > 0;
-
   const displayItemCount = hasMounted ? itemCount : 0;
   const displayTotal = hasMounted ? total : 0;
+  const showCart = displayItemCount > 0;
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
