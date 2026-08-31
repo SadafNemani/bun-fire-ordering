@@ -20,13 +20,11 @@ const navLinks = [
   { href: "/about", label: "About" },
 ];
 
-const cartVisiblePaths = ["/menu", "/checkout", "/order-confirmation"];
-
 export default function Navbar() {
   const pathname = usePathname();
   const { itemCount, total, openCart } = useCart();
   const hasMounted = useHasMounted();
-  const showCart = cartVisiblePaths.includes(pathname);
+  const showCart = itemCount > 0;
 
   const displayItemCount = hasMounted ? itemCount : 0;
   const displayTotal = hasMounted ? total : 0;
