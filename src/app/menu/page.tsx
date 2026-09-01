@@ -47,6 +47,13 @@ export default function MenuPage() {
   const [sortOption, setSortOption] = useState<SortOption>("popular");
   const contentRef = useRef<HTMLDivElement>(null);
   const { addItem } = useCart();
+  const [justTapped, setJustTapped] = useState<CategoryId | null>(null);
+
+  const handleCategoryChange = (id: CategoryId) => {
+    setActiveCategory(id);
+    setJustTapped(id);
+    setTimeout(() => setJustTapped(null), 400);
+  };
 
   const categoryTabItems = categories.map((cat) => ({
     id: cat.id,
@@ -166,17 +173,25 @@ export default function MenuPage() {
                 const Icon = cat.icon;
                 const isActive = cat.id === activeCategory;
                 return (
-                  <button
+                  <motion.button
                     key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
+                    onClick={() => handleCategoryChange(cat.id)}
+                    animate={{
+                      width: isActive ? 64 : 48,
+                      height: isActive ? 64 : 48,
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
                     className={cn(
-                      "rounded-button shadow-button flex shrink-0 flex-col items-center justify-center transition-all duration-300",
-                      isActive
-                        ? "bg-primary text-surface h-16 w-16"
-                        : "bg-surface text-charcoal h-12 w-12"
+                      "rounded-button shadow-button flex shrink-0 flex-col items-center justify-center",
+                      isActive ? "bg-primary text-surface" : "bg-surface text-charcoal"
                     )}
                   >
-                    <Icon className={cn(isActive ? "h-6 w-6" : "h-5 w-5")} />
+                    <motion.div
+                      animate={justTapped === cat.id ? { rotate: [0, -15, 15, -8, 0] } : {}}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <Icon className={cn(isActive ? "h-6 w-6" : "h-5 w-5")} />
+                    </motion.div>
                     <span
                       className={cn(
                         "mt-0.5 leading-none",
@@ -185,7 +200,7 @@ export default function MenuPage() {
                     >
                       {cat.label}
                     </span>
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
