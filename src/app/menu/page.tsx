@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Hamburger, Layers, Salad, CupSoda, Droplet } from "lucide-react";
 import Section from "@/components/layout/Section";
@@ -117,32 +118,45 @@ export default function MenuPage() {
                 )}
               </div>
 
-              {isCombosActive ? (
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {combos.map((combo) => (
-                    <ComboCard
-                      key={combo.id}
-                      combo={combo}
-                      image={comboImages[combo.id]}
-                      onAddToCart={() =>
-                        addItem({
-                          id: combo.id,
-                          name: combo.name,
-                          price: combo.price,
-                          quantity: 1,
-                          category: "combos",
-                        })
-                      }
-                    />
-                  ))}
-                </div>
-              ) : (
-                <MenuItemGrid
-                  key={`${activeCategory}-${sortOption}`}
-                  items={filteredItems}
-                  images={menuItemImages}
-                />
-              )}
+              <AnimatePresence mode="wait">
+                {isCombosActive ? (
+                  <motion.div
+                    key="combos"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                  >
+                    {combos.map((combo) => (
+                      <ComboCard
+                        key={combo.id}
+                        combo={combo}
+                        image={comboImages[combo.id]}
+                        onAddToCart={() =>
+                          addItem({
+                            id: combo.id,
+                            name: combo.name,
+                            price: combo.price,
+                            quantity: 1,
+                            category: "combos",
+                          })
+                        }
+                      />
+                    ))}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={`${activeCategory}-${sortOption}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <MenuItemGrid items={filteredItems} images={menuItemImages} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
 
