@@ -85,7 +85,7 @@ export default function MenuItemCard({
         </div>
         <PriceText value={item.price} />
         <div className="flex flex-col items-end">
-          <AddToCartButton onClick={onAddToCart} />
+          <AddToCartButton onClick={onAddToCart} image={image} />
         </div>
       </div>
     </Card>

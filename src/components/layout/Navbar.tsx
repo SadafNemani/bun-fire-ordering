@@ -11,8 +11,10 @@ import Button from "../ui/Button";
 import CartButton from "../ui/CartButton";
 import MobileMenu from "./MobileMenu";
 import { useCart } from "@/hooks/useCart";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/utils/cn";
 import CartButtonCompact from "../ui/CartButtonCompact";
+import { useCartIconRef } from "@/context/CartIconPositionContext";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,6 +29,8 @@ export default function Navbar() {
   const displayItemCount = hasMounted ? itemCount : 0;
   const displayTotal = hasMounted ? total : 0;
   const showCart = displayItemCount > 0;
+  const cartIconRef = useCartIconRef();
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -83,7 +87,11 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           {showCart ? (
-            <CartButton itemCount={displayItemCount} total={displayTotal} onClick={openCart} />
+            isDesktop && (
+              <div ref={cartIconRef as React.RefObject<HTMLDivElement>}>
+                <CartButton itemCount={displayItemCount} total={displayTotal} onClick={openCart} />
+              </div>
+            )
           ) : (
             <Link href="/menu">
               <Button variant="primary" className="h-12.5 px-6 text-sm">
@@ -94,7 +102,11 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          {showCart && <CartButtonCompact itemCount={displayItemCount} onClick={openCart} />}
+          {showCart && !isDesktop && (
+            <div ref={cartIconRef as React.RefObject<HTMLDivElement>}>
+              <CartButtonCompact itemCount={displayItemCount} onClick={openCart} />
+            </div>
+          )}
 
           <button
             onClick={() => setMobileOpen(true)}

@@ -7,6 +7,8 @@ import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import DemoBanner from "@/components/system/DemoBanner";
 import CustomCursor from "@/components/system/CustomCursor";
+import { CartIconPositionProvider } from "@/context/CartIconPositionContext";
+import FlyToCartLayer from "@/components/cart/FlyToCartLayer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,12 +23,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <CartProvider>
-          <DemoBanner />
-          <CustomCursor />
-          <Navbar />
-          {children}
-          <CartDrawer />
-          <Footer />
+          <CartIconPositionProvider>
+            <DemoBanner />
+            <CustomCursor />
+            <Navbar />
+            {children}
+            <CartDrawer />
+            <FlyToCartLayer />
+            <Footer />
+          </CartIconPositionProvider>
         </CartProvider>
       </body>
     </html>
