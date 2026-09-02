@@ -9,6 +9,7 @@ import DemoBanner from "@/components/system/DemoBanner";
 import CustomCursor from "@/components/system/CustomCursor";
 import { CartIconPositionProvider } from "@/context/CartIconPositionContext";
 import FlyToCartLayer from "@/components/cart/FlyToCartLayer";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 const siteUrl = "https://bunandfire.netlify.app";
 
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${bricolageGrotesque.variable} ${plusJakartaSans.variable} ${kaushanScript.variable}`}
     >
       <body>
+        <LocalBusinessSchema />
         <CartProvider>
           <CartIconPositionProvider>
             <DemoBanner />
