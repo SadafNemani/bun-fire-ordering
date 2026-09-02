@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Check, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Heading from "@/components/typography/Heading";
@@ -17,6 +17,7 @@ import { siteContent } from "@/data/site-content";
 import { menuItems, combos } from "@/data/menu";
 import type { CartItem, CheckoutFormData } from "@/types/order";
 import { useHasMounted } from "@/hooks/useHasMounted";
+import AnimatedCheckmark from "@/components/confirmation/AnimatedCheckmark";
 
 const imageMap = Object.fromEntries([
   ...menuItems.map((i) => [i.id, `/images/menu/${i.id}.jpg`]),
@@ -81,9 +82,7 @@ export default function OrderConfirmationPage() {
               />
 
               <div className="flex flex-col items-center gap-2 text-center">
-                <span className="rounded-button bg-success flex h-20 w-20 items-center justify-center">
-                  <Check className="text-surface h-10 w-10" strokeWidth={3} />
-                </span>
+                <AnimatedCheckmark />
                 <Heading as="h1" size="lg" highlight="Confirmed">
                   {confirmation.title}
                 </Heading>
