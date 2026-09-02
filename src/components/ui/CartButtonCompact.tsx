@@ -11,7 +11,10 @@ interface CartButtonCompactProps {
 
 export default function CartButtonCompact({ itemCount, onClick }: CartButtonCompactProps) {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.92 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
       onClick={onClick}
       aria-label={`View cart, ${itemCount} ${itemCount === 1 ? "item" : "items"}`}
       className="rounded-button bg-primary shadow-button relative flex h-11 w-11 items-center justify-center"
@@ -33,6 +36,6 @@ export default function CartButtonCompact({ itemCount, onClick }: CartButtonComp
           </motion.div>
         )}
       </AnimatePresence>
-    </button>
+    </motion.button>
   );
 }

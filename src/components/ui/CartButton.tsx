@@ -15,10 +15,13 @@ interface CartButtonProps {
 
 export default function CartButton({ itemCount, total, onClick, className }: CartButtonProps) {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.96 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
       onClick={onClick}
       className={cn(
-        "rounded-button bg-primary flex cursor-pointer items-center gap-2.5 px-4 py-2.5",
+        "rounded-button bg-primary hover:shadow-button flex cursor-pointer items-center gap-2.5 px-4 py-2.5 transition-shadow",
         className
       )}
     >
@@ -48,6 +51,6 @@ export default function CartButton({ itemCount, total, onClick, className }: Car
         <span className="text-surface/80 text-[11px] font-medium">View Cart</span>
         <PriceText value={total} className="text-surface text-[14px]" />
       </div>
-    </button>
+    </motion.button>
   );
 }

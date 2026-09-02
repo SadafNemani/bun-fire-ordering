@@ -23,7 +23,9 @@ export default function AddToCartButton({ onClick, image, className }: AddToCart
   return (
     <div className={cn("relative h-12.5 w-12.5", className)}>
       <motion.button
+        whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.85 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }}
         onClick={handleClick}
         className="group rounded-button bg-primary absolute top-0 right-0 flex h-12.5 w-12.5 cursor-pointer items-center justify-end overflow-hidden transition-[width] duration-300 ease-in-out hover:w-23"
         aria-label="Add to cart"
