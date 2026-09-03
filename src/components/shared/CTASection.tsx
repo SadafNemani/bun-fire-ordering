@@ -10,7 +10,13 @@ export default function CTASection() {
     <div className="rounded-card bg-background shadow-card grid grid-cols-1 gap-8 p-8 md:grid-cols-3">
       <div className="flex items-center gap-4">
         <div className="rounded-image relative h-20 w-20 shrink-0 overflow-hidden">
-          <Image src="/images/qr-code.png" alt="QR code" fill className="object-cover" />
+          <Image
+            src="/images/qr-code.png"
+            alt="QR code"
+            fill
+            className="object-cover"
+            sizes="80px"
+          />
         </div>
         <div className="flex flex-col gap-1">
           <span className="font-body text-charcoal text-[20px] font-extrabold">
@@ -31,7 +37,7 @@ export default function CTASection() {
 
       <div className="flex items-center gap-4">
         <div className="rounded-image relative h-20 w-20 shrink-0 overflow-hidden">
-          <Image src="/images/social-food.png" alt="" fill className="object-cover" />
+          <Image src="/images/social-food.png" alt="" fill className="object-cover" sizes="80px" />
         </div>
         <div className="flex flex-col gap-1">
           <span className="font-body text-charcoal text-[20px] font-extrabold">
@@ -58,7 +64,13 @@ export default function CTASection() {
       </div>
 
       <div className="rounded-image relative hidden h-full min-h-40 w-full overflow-hidden md:block">
-        <Image src="/images/cta-decorative.png" alt="" fill className="object-contain" />
+        <Image
+          src="/images/cta-decorative.png"
+          alt=""
+          fill
+          className="object-contain"
+          sizes="80px"
+        />
       </div>
     </div>
   );

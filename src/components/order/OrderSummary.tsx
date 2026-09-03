@@ -28,7 +28,13 @@ export default function OrderSummary({ items, images, taxRate = 0.06 }: OrderSum
             className="border-surface-secondary flex items-center gap-4 border-b pb-4 last:border-none last:pb-0"
           >
             <div className="rounded-image relative h-14 w-14 shrink-0 overflow-hidden">
-              <Image src={images[item.id]} alt={item.name} fill className="object-cover" />
+              <Image
+                src={images[item.id]}
+                alt={item.name}
+                fill
+                className="object-cover"
+                sizes="64px"
+              />
             </div>
             <div className="flex flex-1 flex-col">
               <span className="font-body text-button text-charcoal font-extrabold">

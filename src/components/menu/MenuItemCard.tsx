@@ -42,6 +42,7 @@ export default function MenuItemCard({
             alt={item.name}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-110"
+            sizes="320px"
           />
         </div>
         <div className="flex flex-1 flex-col justify-between">
@@ -74,6 +75,7 @@ export default function MenuItemCard({
           alt={item.name}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
       </div>
       <div className="flex flex-col justify-around gap-3 px-5 pb-5">

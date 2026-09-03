@@ -35,6 +35,7 @@ export default function CTABanner({
             alt=""
             fill
             className="object-cover drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]"
+            sizes="(max-width: 768px) 100vw, 30vw"
           />
         </div>
 

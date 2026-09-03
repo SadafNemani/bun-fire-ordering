@@ -20,6 +20,7 @@ export default function MenuHero() {
           alt="Bun & Fire menu spread"
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>

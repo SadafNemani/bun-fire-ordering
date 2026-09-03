@@ -18,7 +18,7 @@ export default function CartItemRow({ item, image }: CartItemRowProps) {
   return (
     <div className="border-surface-secondary flex items-center gap-4 border-b pb-4 last:border-none last:pb-0">
       <div className="rounded-image relative h-16 w-16 shrink-0 overflow-hidden">
-        <Image src={image} alt={item.name} fill className="object-cover" />
+        <Image src={image} alt={item.name} fill className="object-cover" sizes="64px" />
       </div>
 
       <div className="flex flex-1 flex-col gap-3">

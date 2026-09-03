@@ -15,7 +15,13 @@ export default function ComboCard({ combo, image, onAddToCart }: ComboCardProps)
   return (
     <Card background="cream" className="gap-4 p-0">
       <div className="rounded-t-card relative h-48 w-full overflow-hidden">
-        <Image src={image} alt={combo.name} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={combo.name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        />
       </div>
       <div className="flex flex-col gap-3 px-5 pb-5">
         <span className="font-body text-item-title text-charcoal font-extrabold">{combo.name}</span>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Label from "../typography/Label";
 import Heading from "../typography/Heading";
@@ -43,6 +45,7 @@ export default function AboutHero() {
           alt="Bun & Fire kitchen"
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>

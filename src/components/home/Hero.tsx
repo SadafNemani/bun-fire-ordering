@@ -60,6 +60,7 @@ export default function HomeHero() {
               fill
               priority
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
         </motion.div>
