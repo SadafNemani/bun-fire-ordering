@@ -57,6 +57,7 @@ export default function Navbar() {
             height={36}
             alt="Bun&Fire logo"
             className="h-6 w-auto md:h-9"
+            style={{ aspectRatio: "1197/36" }}
           />
         </Link>
 

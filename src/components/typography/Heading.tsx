@@ -67,7 +67,7 @@ export default function Heading({
               acc.push(part);
               if (i < arr.length - 1) {
                 acc.push(
-                  <span key={1} className="text-primary">
+                  <span key={1} className="text-primary-darker">
                     {highlight}
                   </span>
                 );

@@ -70,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <DemoBanner />
             <CustomCursor />
             <Navbar />
-            {children}
+            <main>{children}</main>
             <CartDrawer />
             <FlyToCartLayer />
             <Footer />

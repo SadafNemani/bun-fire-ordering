@@ -50,7 +50,7 @@ export default function CTABanner({
             <a href={buttonHref}>
               <Button
                 variant="primary"
-                className="bg-surface text-primary! text-button hover:bg-surface/90 w-70 justify-center"
+                className="bg-surface text-primary-darker! text-button hover:bg-surface/90 w-70 justify-center"
               >
                 {buttonLabel}
               </Button>

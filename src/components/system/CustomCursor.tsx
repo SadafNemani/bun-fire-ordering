@@ -32,6 +32,35 @@ export default function CustomCursor() {
 
     document.documentElement.classList.add("custom-cursor-active");
 
+    let idleTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    const startLoop = () => {
+      if (rafId.current !== null) return;
+      const animate = () => {
+        pos.current.x += (mouse.current.x - pos.current.x) * 0.2;
+        pos.current.y += (mouse.current.y - pos.current.y) * 0.2;
+        glowPos.current.x += (mouse.current.x - glowPos.current.x) * 0.09;
+        glowPos.current.y += (mouse.current.y - glowPos.current.y) * 0.09;
+
+        if (cursorRef.current) {
+          cursorRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
+        }
+        if (glowRef.current) {
+          glowRef.current.style.transform = `translate3d(${glowPos.current.x}px, ${glowPos.current.y}px, 0)`;
+        }
+
+        rafId.current = requestAnimationFrame(animate);
+      };
+      rafId.current = requestAnimationFrame(animate);
+    };
+
+    const stopLoop = () => {
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+        rafId.current = null;
+      }
+    };
+
     const onMouseMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
       if (!isVisible) setIsVisible(true);
@@ -44,9 +73,17 @@ export default function CustomCursor() {
       } else {
         setCursorMode("default");
       }
+
+      startLoop();
+      if (idleTimeout) clearTimeout(idleTimeout);
+      idleTimeout = setTimeout(stopLoop, 2000);
     };
 
-    const onMouseLeave = () => setIsVisible(false);
+    const onMouseLeave = () => {
+      setIsVisible(false);
+      stopLoop();
+      if (idleTimeout) clearTimeout(idleTimeout);
+    };
 
     const onClick = (e: MouseEvent) => {
       const id = burstIdRef.current++;
@@ -60,30 +97,13 @@ export default function CustomCursor() {
     document.documentElement.addEventListener("mouseleave", onMouseLeave);
     window.addEventListener("click", onClick);
 
-    const animate = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.2;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.2;
-
-      glowPos.current.x += (mouse.current.x - glowPos.current.x) * 0.09;
-      glowPos.current.y += (mouse.current.y - glowPos.current.y) * 0.09;
-
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
-      }
-      if (glowRef.current) {
-        glowRef.current.style.transform = `translate3d(${glowPos.current.x}px, ${glowPos.current.y}px, 0)`;
-      }
-
-      rafId.current = requestAnimationFrame(animate);
-    };
-    rafId.current = requestAnimationFrame(animate);
-
     return () => {
       document.documentElement.classList.remove("custom-cursor-active");
       window.removeEventListener("mousemove", onMouseMove);
       document.documentElement.removeEventListener("mouseleave", onMouseLeave);
       window.removeEventListener("click", onClick);
-      if (rafId.current) cancelAnimationFrame(rafId.current);
+      stopLoop();
+      if (idleTimeout) clearTimeout(idleTimeout);
     };
   }, [isFinePointer, isVisible]);
 
