@@ -30,7 +30,7 @@ export default function Button({
       whileTap={{ scale: 0.96, y: 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
       className={cn(
-        "rounded-button font-body inline-flex cursor-pointer items-center gap-2 px-6 py-5 font-bold transition-colors",
+        "rounded-button font-body inline-flex cursor-pointer items-center gap-2 px-7 py-3.5 font-bold transition-colors",
         variant === "primary" &&
           "bg-primary-darker text-surface hover:bg-primary-darker/90 hover:shadow-button",
         variant === "secondary" &&

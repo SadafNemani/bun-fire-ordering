@@ -52,7 +52,7 @@ export default function Heading({
                 animate="visible"
                 variants={lineVariants}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: "easeOut" as const }}
-                className={cn("block", i === highlightLine && "text-primary")}
+                className={cn("block", i === highlightLine && "text-primary-darker")}
               >
                 {line}
               </motion.span>
