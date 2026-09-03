@@ -55,7 +55,7 @@ export default function HomeHero() {
             className="relative h-full w-full"
           >
             <Image
-              src="/images/home-hero.png"
+              src="/images/home-hero.webp"
               alt="Bun & Fire signature burger"
               fill
               priority

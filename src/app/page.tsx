@@ -50,7 +50,7 @@ export default function HomePage() {
             description={cta.description}
             buttonLabel={cta.buttonPrimary}
             buttonHref="/menu"
-            imageSrc="/images/home-cta.png"
+            imageSrc="/images/home-cta.webp"
           />
         </Container>
       </Section>

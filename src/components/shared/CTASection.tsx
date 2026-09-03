@@ -37,7 +37,7 @@ export default function CTASection() {
 
       <div className="flex items-center gap-4">
         <div className="rounded-image relative h-20 w-20 shrink-0 overflow-hidden">
-          <Image src="/images/social-food.png" alt="" fill className="object-cover" sizes="80px" />
+          <Image src="/images/social-food.webp" alt="" fill className="object-cover" sizes="80px" />
         </div>
         <div className="flex flex-col gap-1">
           <span className="font-body text-charcoal text-[20px] font-extrabold">
@@ -65,7 +65,7 @@ export default function CTASection() {
 
       <div className="rounded-image relative hidden h-full min-h-40 w-full overflow-hidden md:block">
         <Image
-          src="/images/cta-decorative.png"
+          src="/images/cta-decorative.webp"
           alt=""
           fill
           className="object-contain"

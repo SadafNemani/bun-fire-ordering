@@ -99,7 +99,7 @@ export default function MenuPageClient() {
                 description={siteContent.menu.banner.description}
                 buttonLabel={siteContent.menu.banner.buttonPrimary}
                 buttonHref="#combos"
-                imageSrc="/images/combo-banner.png"
+                imageSrc="/images/combo-banner.webp"
               />
             </aside>
 

@@ -41,7 +41,7 @@ export default function AboutHero() {
 
       <div className="rounded-card relative h-80 w-full overflow-hidden md:h-105">
         <Image
-          src="/images/about-hero.png"
+          src="/images/about-hero.webp"
           alt="Bun & Fire kitchen"
           fill
           className="object-cover"
