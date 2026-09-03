@@ -57,7 +57,10 @@ export default function Heading({
                 {line}
               </motion.span>
             ) : (
-              <span key={line} className={cn("block", i === highlightLine && "text-primary")}>
+              <span
+                key={line}
+                className={cn("block", i === highlightLine && "text-primary-darker")}
+              >
                 {line}
               </span>
             )
