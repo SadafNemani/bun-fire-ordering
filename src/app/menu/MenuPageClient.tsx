@@ -98,7 +98,7 @@ export default function MenuPageClient() {
                 title={siteContent.menu.banner.title}
                 description={siteContent.menu.banner.description}
                 buttonLabel={siteContent.menu.banner.buttonPrimary}
-                buttonHref="#combos"
+                onButtonClick={() => setActiveCategory("combos")}
                 imageSrc="/images/combo-banner.webp"
               />
             </aside>

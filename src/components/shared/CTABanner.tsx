@@ -7,7 +7,8 @@ interface CTABannerProps {
   title: string;
   description: string;
   buttonLabel: string;
-  buttonHref: string;
+  buttonHref?: string;
+  onButtonClick?: () => void;
   imageSrc: string;
   className?: string;
 }
@@ -18,6 +19,7 @@ export default function CTABanner({
   description,
   buttonLabel,
   buttonHref,
+  onButtonClick,
   imageSrc,
   className,
 }: CTABannerProps) {
@@ -69,14 +71,26 @@ export default function CTABanner({
       <p className="text-hero font-body text-button text-text-secondary font-medium">
         {description}
       </p>
-      <a href={buttonHref}>
-        <Button
-          variant="primary"
-          className="bg-surface text-primary text-body w-full justify-center"
+
+      {onButtonClick ? (
+        <button
+          onClick={onButtonClick}
+          className="bg-surface text-primary text-body shadow-button hover:bg-surface/90 w-full justify-center"
         >
           {buttonLabel}
-        </Button>
-      </a>
+        </button>
+      ) : (
+        <a href={buttonHref}>
+          <Button
+            variant="primary"
+
+            className="bg-surface text-primary text-body hover:bg-surface/90 shadow-button w-full justify-center"
+          >
+            {buttonLabel}
+          </Button>
+        </a>
+      )}
+
       <div className="rounded-image relative h-32 w-full overflow-hidden">
         <Image src={imageSrc} alt="" fill className="object-cover" />
       </div>

@@ -1,6 +1,7 @@
 // components/motion/PageTransition.tsx
 "use client";
 
+import { useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 
 const wipeVariants: Variants = {
@@ -25,6 +26,10 @@ const contentVariants: Variants = {
 };
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div className="relative">
       {/* Curved paint-wipe panels */}
