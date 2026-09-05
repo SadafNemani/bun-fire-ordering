@@ -73,7 +73,7 @@ export const siteContent = {
       contact: {
         label: "Contact Us",
         linkLabel: "Send Us a Message",
-        linkHref: "#", // e.g. mailto:hello@bunandfire.com or a contact anchor
+        linkHref: "mailto:hello@bunandfire.com",
       },
     },
     cta: {
@@ -81,7 +81,6 @@ export const siteContent = {
         title: "Scan, Order, Enjoy!",
         description: "Save our menu and order anytime.",
         linkLabel: "Get Our QR Code",
-        linkHref: "#",
       },
       column2: {
         title: "Love Our Food?",

@@ -26,7 +26,8 @@ export default function CTASection() {
             {cta.column1.description}
           </span>
           <a
-            href={cta.column1.linkHref}
+            href="/images/qr-code.png"
+            download
             className="font-body text-button text-primary flex items-center font-bold"
           >
             {cta.column1.linkLabel}
